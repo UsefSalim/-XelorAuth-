@@ -1,4 +1,4 @@
-const { register, login } = require('xelor');
+const { login ,register } = require('xelor');
 const User = require('../models/user.models');
 const {
   registerValidations,
@@ -7,12 +7,15 @@ const {
 
 exports.registerController = async (req, res) => {
   const { email } = req.body;
-  await register(req, res, User, registerValidations, email, 'email');
+  await register(req, res, User, registerValidations, { email });
 };
-
+exports.registerAdminController = async (req, res) => {
+  const { email } = req.body;
+  await register(req, res, User, registerValidations, { email }, 'Admin');
+};
 exports.loginController = async (req, res) => {
   const { email } = req.body;
-  await login(req, res, User, loginValidations, email, 'email');
+  await login(req, res, User, loginValidations, { email });
 };
 exports.logoutController = (req, res) =>
   res.clearCookie('_token').json({ role: '', isAuthenticated: false });
