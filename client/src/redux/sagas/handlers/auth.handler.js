@@ -40,7 +40,6 @@ export function* handelGetLogout(action) {
   try {
     const { data } = yield call(requestLogout, action);
     if (data) {
-      console.log(data)
       yield put(setLogin(data));
     }
   } catch (error) {

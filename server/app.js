@@ -34,7 +34,5 @@ module.exports = (app) => {
   app.use('/auth', authRoutes);
 
   app.use(error);
-  app.use('*', verifIsAuthenticated, (req, res, next) => {
-    next();
-  });
+  app.use('*', verifIsAuthenticated);
 };
