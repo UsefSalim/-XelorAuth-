@@ -4,8 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js",
-    "dep": "npm i jsonwebtoken bcrypt"
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "pnpm start --prefix ../client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +25,7 @@
     "xelor": "^1.5.0"
   },
   "devDependencies": {
+    "concurrently": "^6.0.2",
     "eslint": "^7.25.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
