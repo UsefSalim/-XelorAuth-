@@ -22,7 +22,7 @@
     "joi": "^17.4.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.6",
-    "xelor": "^1.5.0"
+    "xelor": "^1.5.2"
   },
   "devDependencies": {
     "concurrently": "^6.0.2",
