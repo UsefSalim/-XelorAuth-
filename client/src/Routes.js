@@ -5,12 +5,10 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import DashboardUser from './pages/DashboardUser'
 import DashboardAdmin from './pages/DashboardAdmin'
-import Multers from './pages/Multers'
 function Routes(props) {
   const {auth,role} = props
   return (
     <Switch>
-        <UserRoutes exact path="/dashboard/user/multers" role={role} auth={auth} component={Multers}/>
         <Route exact path="/" component={Home}/>
         <AuthRoutes exact path="/register" component={Register} role={role} auth={auth}/>
         <AuthRoutes exact path="/login" component={Login} role={role} auth={auth}/>
