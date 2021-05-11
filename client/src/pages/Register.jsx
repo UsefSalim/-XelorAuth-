@@ -42,7 +42,7 @@ export default function Register() {
     },
     validationSchema,
     onSubmit: (values) => {
-      dispatch(getRegister(values));
+      dispatch(getRegister(values)) 
     },
   });
   return (

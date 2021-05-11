@@ -1,19 +1,17 @@
 import React,{useEffect} from 'react'
 import {BrowserRouter as Router} from "react-router-dom"
 import {useDispatch,useSelector } from 'react-redux'
-import Routes from './Routes'
+import Routes from './Routes/Routes'
 import {ifLoged} from './redux/slices/authSlice'
-
-
 const App =()=> {
+  const {isAuthenticated} = useSelector(state => state.authentification)
   const dispatch = useDispatch()
   useEffect(()=>{
     dispatch(ifLoged())
-  },[dispatch])
-  const {isAuthenticated,role} = useSelector(state => state.authentification)
+  }, [isAuthenticated])
   return (
     <Router>
-      <Routes  auth={isAuthenticated} role ={role}/>
+      <Routes />
     </Router>
   );
 }

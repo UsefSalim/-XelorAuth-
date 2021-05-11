@@ -50,7 +50,7 @@ export default function Login() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign up
+          Sign In
         </Typography>
         <form className={classes.form} onSubmit={formik.handleSubmit} noValidate>
           {loginError && <Alert color="error">{loginError}</Alert>}
@@ -100,7 +100,7 @@ export default function Login() {
           <Grid container justify="flex-end">
             <Grid item>
               <Link to="/register" variant="body2">
-                Already have an account? Sign in
+                  Don't have an account? Sign Up
               </Link>
             </Grid>
           </Grid>
